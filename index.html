@@ -127,60 +127,42 @@
                 </td>
               </tr>
 
-              <!-- PREDICT RECOMMENDER (image | title | SHOP NOW) -->
-              <tr>
-                <td>
-                  <table cellpadding="0" cellspacing="0" border="0" width="100%" style="background:#ffffff;">
-                    <tr><td width="18"></td>
-                      <td>
+              <!-- PREDICT RECOMMENDER (dummy product for preview) -->
+<table cellpadding="0" cellspacing="0" border="0" width="600" align="center" style="background:#ffffff; margin:0 auto;">
+  <tr>
+    <td>
 
-                        {% foreach item in event.predict_cart %}
+      <!-- Single dummy product row -->
+      <table cellpadding="0" cellspacing="0" border="0" width="100%">
+        <tr>
+          <!-- image -->
+          <td width="180" valign="middle" style="vertical-align:middle;">
+            <a href="#" target="_blank" style="text-decoration:none; color:#000;">
+              <img src="http://link.cablemelbourne.com/custloads/794301826/md_1118494.jpg" width="180" alt="Sabine Double Breasted Coat" style="display:block; width:180px; height:auto; border:0;">
+            </a>
+          </td>
 
-                        <!-- product row -->
-                        <table cellpadding="0" cellspacing="0" border="0" width="100%">
-                          <tr>
-                            <!-- image -->
-                            <td width="138" valign="middle" style="vertical-align:middle;">
-                              <a href="{{ item.link | default('#') }}" target="_blank" style="text-decoration:none; color:#000;">
-                                <img src="{{ item.image | default('http://link.cablemelbourne.com/custloads/794301826/md_1118494.jpg') }}" width="138" alt="{{ item.title | default('Sabine Double Breasted Coat') }}" style="display:block; width:138px; height:auto; border:0;">
-                              </a>
-                            </td>
+          <td width="20"></td>
 
-                            <td width="20"></td>
+          <!-- title -->
+          <td valign="middle" align="left" style="font-family: Arial, Helvetica, sans-serif; vertical-align:middle;">
+            <span style="font-size:18px; font-weight:700; color:#000;">
+              Sabine Double Breasted Coat
+            </span>
+          </td>
 
-                            <!-- title -->
-                            <td valign="middle" align="center" style="font-family: Arial, Helvetica, sans-serif; vertical-align:middle;">
-                              <span style="font-size:18px; font-weight:700; color:#000;">
-                                {{ item.title | default('Sabine Double Breasted Coat') }}
-                              </span>
-                            </td>
+          <!-- shop now -->
+          <td align="right" valign="middle" width="120" style="vertical-align:middle;">
+            <a href="#" target="_blank" style="font-family: Arial, Helvetica, sans-serif; font-size:12px; color:#000; text-decoration:underline; white-space:nowrap;">
+              SHOP NOW
+            </a>
+          </td>
+        </tr>
+      </table>
 
-                            <!-- shop now -->
-                            <td align="right" valign="middle" width="180" style="vertical-align:middle;">
-                              <a href="{{ item.link | default('#') }}" target="_blank" style="font-family: Arial, Helvetica, sans-serif; font-size:12px; color:#000; text-decoration:underline; white-space:nowrap;">
-                                SHOP NOW
-                              </a>
-                            </td>
-                          </tr>
-                        </table>
-
-                        {% if loop.last %}{% else %}
-                        <!-- divider spacing between items -->
-                        <table cellpadding="0" cellspacing="0" border="0" width="100%">
-                          <tr><td style="height:20px; line-height:20px;">&nbsp;</td></tr>
-                          <tr><td style="height:1px; background:#e6e6e6; line-height:1px; font-size:0;">&nbsp;</td></tr>
-                          <tr><td style="height:20px; line-height:20px;">&nbsp;</td></tr>
-                        </table>
-                        {% endif %}
-
-                        {% endforeach %}
-
-                      </td>
-                      <td width="18"></td>
-                    </tr>
-                  </table>
-                </td>
-              </tr>
+    </td>
+  </tr>
+</table>
 
               <!-- CTA IMAGE -->
               <tr><td height="25"></td></tr>
